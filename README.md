@@ -72,3 +72,12 @@ npm run start
 This command will start a local server and you'll be able to work on your site with hot reloads and some nice Browsersync features. 💥
 
 --- 
+breaks when running windows - untested for push to netlify
+
+run:
+npm install --save-dev cross-env
+change into:
+package.json
+
+"build": "cross-env ELEVENTY_PRODUCTION=true eleventy && cross-env NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
+
